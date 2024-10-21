@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* index.css */
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Pastikan elemen ini tetap di atas elemen lain */
+    background-color: white; /* Opsional: memberikan background agar tetap jelas */
+    padding: 8px; /* Opsional: memberikan padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opsional: menambahkan bayangan untuk efek lebih baik */
+  }
+  
