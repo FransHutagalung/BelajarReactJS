@@ -2,6 +2,9 @@ import { createContext, useState } from "react";
 import Components1 from "../DataConsume/Components1";
 import Components2 from "../DataConsume/Components2";
 import Profile from "../DataConsume/Profile";
+import { ContextNext } from "../../context/ContextNext";
+import Components3 from "../DataConsume/Components3";
+
 
 
 // Interface
@@ -30,7 +33,7 @@ const LearnThree = () => {
     });
 
     return (
-        <div className="flex ">
+        <div className="flex flex-col ">
             <div className="w-1/2">
                 <Data.Provider value={{ profile, setProfile }}>
                     <Components1 />
@@ -40,6 +43,10 @@ const LearnThree = () => {
             <div className="w-1/2">
                 <Profile />
             </div>
+            <p>Context Lanjutan</p>
+            <ContextNext >
+                <Components3 />
+            </ContextNext>
         </div>
     );
 };

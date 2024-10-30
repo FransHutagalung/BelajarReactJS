@@ -4,6 +4,8 @@ import LearnTwo from "./components/LearnCurve/LearnTwo"
 import LearnThree from "./components/LearnCurve/LearnThree"
 import LearnFour from "./components/LearnCurve/LearnFour"
 import LearnFive from "./components/LearnCurve/LearnFive"
+import LearnSix from "./components/LearnCurve/LearnSix"
+import LearnSeven from "./components/LearnCurve/LearnSeven"
 
 function App() {
 
@@ -15,7 +17,9 @@ function App() {
       () => <LearnTwo />,
       () => <LearnThree />,
       () => <LearnFour /> ,
-      () => <LearnFive />
+      () => <LearnFive /> ,
+      () => <LearnSix /> , 
+      () => <LearnSeven />
    ]
 
    return (
@@ -30,6 +34,8 @@ function App() {
             <button onClick={() => setPage(2)} className="bg-blue-200 h-8 w-32 rounded-md">Materi 3</button>
             <button onClick={() => setPage(3)} className="bg-blue-200 h-8 w-32 rounded-md">Materi 4</button>
             <button onClick={() => setPage(4)} className="bg-blue-200 h-8 w-32 rounded-md">Materi 5</button>
+            <button onClick={() => setPage(5)} className="bg-blue-200 h-8 w-32 rounded-md">Materi 6</button>
+            <button onClick={() => setPage(6)} className="bg-blue-200 h-8 w-32 rounded-md">Materi 7</button>
          </div>
          <div className="p-2">
             {MaterialApp[page]()}

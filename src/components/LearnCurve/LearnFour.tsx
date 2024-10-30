@@ -5,16 +5,30 @@ interface stateInterface {
     notification: boolean
 }
 
+type Action = {
+    type: "INCREMENT"
+} | {
+    type: "DECREMENT"
+} | {
+    type: "reset"
+} | {
+    type: "incrementPayload"
+    Payload: number
+} | {
+    type: "decrementPayload"
+    Payload: number
+}
+
 const initialState: stateInterface = {
-    count: 0,
+    count: 0, 
     notification: false
 }
 
-const reducer = (state: stateInterface, action: any) => {
+const reducer = (state: stateInterface, action: Action) => {
     switch (action.type) {
-        case "increment":
+        case "INCREMENT":
             return { ...state, count: state.count + 1 }
-        case "decrement":
+        case "DECREMENT":
             return { ...state, count: state.count - 1 }
         case "reset":
             return { ...state, count: 0 }
@@ -45,8 +59,8 @@ const LearnFour = () => {
             <h1 className="text-3xl">{state.count}</h1>
             <div className="h-16"></div>
             <div className="flex gap-2">
-                <button className="bg-blue-400 rounded-md p-1" onClick={() => dispatch({ type: "increment" })}>Increment</button>
-                <button className="bg-blue-400 rounded-md p-1" onClick={() => dispatch({ type: "decrement" })}>Decrement</button>
+                <button className="bg-blue-400 rounded-md p-1" onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+                <button className="bg-blue-400 rounded-md p-1" onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
                 <button className="bg-blue-400 rounded-md p-1" onClick={() => dispatch({ type: "reset" })}>Reset</button>
 
                 <p>Action from Payload</p>
